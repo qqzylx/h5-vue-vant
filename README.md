@@ -1,4 +1,4 @@
-# platform
+# h5-vue-vant
 
 ## Usage
 
