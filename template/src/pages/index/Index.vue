@@ -9,5 +9,6 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
-
+    .Index
+        font-size 30px
 </style>
