@@ -1,8 +1,6 @@
 import axios from "axios";
 import qs from "qs";
 import {Toast} from 'vant';
-import {debugSet} from '../config';
-import terminal from '../utils/terminal';
 import store from '../store';
 import router from '../router';
 import urls from './urls';
@@ -16,9 +14,7 @@ function getCookie(name) {
 }
 
 const http = axios.create({
-    //baseURL: "https://services.baiyaodajiankang.com/customer/", // 因为我本地做了反向代理
     baseURL: "/", // 因为我本地做了反向代理
-    // baseURL: "/",
     timeout: 50000,
     responseType: "json",
     withCredentials: true, // 是否允许带cookie这些
@@ -95,7 +91,7 @@ http.interceptors.response.use(
         if (!store.state.strongLoading) {
             Toast && Toast.clear();
         }
-        
+
         return Promise.reject(error);
     }
 );
