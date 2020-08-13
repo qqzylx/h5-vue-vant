@@ -19,6 +19,10 @@ Vue.use(urls);
 import base from './utils/base.js';
 Vue.use(base);
 
+import Vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Vant);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
