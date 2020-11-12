@@ -20,11 +20,26 @@
     "test": "{{#unit}}npm run unit{{/unit}}{{#unit}}{{#e2e}} && {{/e2e}}{{/unit}}{{#e2e}}npm run e2e{{/e2e}}",
     {{/if_or}}
     {{#lint}}
-    "lint": "eslint --ext .js,.vue src{{#unit}} test/unit{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}",
+    "lint": "eslint -c .eslintrc.js --ext .js,.vue src{{#unit}} test/unit{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}",
+    "lint:fix": "eslint -c .eslintrc.js --ext .js,.vue src{{#unit}} test/unit{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}} --fix",
+    "precommit": "lint-staged"
     {{/lint}}
     "build": "node build/build.js",
     "sprite": "gulp sprite"
   },
+  {{#lint}}
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run precommit"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.{js,vue}": [
+            "eslint --fix",
+            "git add"
+        ]
+    },
+  {{/lint}}
   "dependencies": {
     "axios": "^0.19.2",
     "lib-flexible": "^0.3.2",
@@ -39,6 +54,8 @@
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.0",
     {{#if_eq lintConfig "standard"}}
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-promise": "^3.4.0",
