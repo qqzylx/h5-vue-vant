@@ -22,7 +22,7 @@
     {{#lint}}
     "lint": "eslint -c .eslintrc.js --ext .js,.vue src{{#unit}} test/unit{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}",
     "lint:fix": "eslint -c .eslintrc.js --ext .js,.vue src{{#unit}} test/unit{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}} --fix",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
     {{/lint}}
     "build": "node build/build.js",
     "sprite": "gulp sprite"
