@@ -1,1 +1,3 @@
-export const SET_STRONG_LOADING = 'SET_STRONG_LOADING';
+export default {
+    SET_STRONG_LOADING: "SET_STRONG_LOADING",
+};

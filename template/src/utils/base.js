@@ -36,9 +36,13 @@ function getUrlQuery(key) {
     return menuCode;
 }
 
-export default function install(Vue, options) {
+export default function install(Vue) {
+    /* eslint-disable no-param-reassign */
     Vue.prototype.isArray = isArray;
+    /* eslint-disable no-param-reassign */
     Vue.prototype.deepCopy = deepCopy;
+    /* eslint-disable no-param-reassign */
     Vue.prototype.parseOptionByVal = parseOptionByVal;
+    /* eslint-disable no-param-reassign */
     Vue.prototype.getUrlQuery = getUrlQuery;
 }

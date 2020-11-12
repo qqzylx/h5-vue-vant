@@ -3,7 +3,8 @@
         <div @click="show" class="con-div">
             <div class="label">\{{label}}</div>
             <div style="width: 100%;display: flex; flex-direction: column; align-items: flex-start">
-                <div class="text" :class="error ? 'error' : text ? '' : 'placeholder'">\{{ text ? text : placeholder }}
+                <div class="text" :class="error ? 'error' : text ? '' : 'placeholder'">
+                    \{{ text ? text : placeholder }}
                     <div
                         style="display: inline-flex; vertical-align: middle">
 
@@ -18,7 +19,12 @@
                 <van-icon name="arrow" class="arrow"/>
             </div>
         </div>
-        <van-action-sheet v-model="isShowPicker" safe-area-inset-bottom :actions="options" cancel-text="取消" @select="onSelect">
+        <van-action-sheet
+            v-model="isShowPicker"
+            safe-area-inset-bottom
+            :actions="options"
+            cancel-text="取消"
+            @select="onSelect">
         </van-action-sheet>
     </div>
 </template>

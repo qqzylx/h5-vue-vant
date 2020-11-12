@@ -100,5 +100,10 @@ module.exports = {
         "no-var": 2, //禁用var，用let和const代替
         "space-before-function-paren": [2, "never"], //函数定义时括号前面要不要有空格
         "spaced-comment": 2, //注释风格要有空格
+        "no-underscore-dangle": 0,
+        "no-plusplus": 0,
+        "no-prototype-builtins": 0,
+        "eqeqeq": 0,
+        "radix": 0,
     }
 }
