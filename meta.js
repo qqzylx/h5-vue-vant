@@ -43,8 +43,8 @@ module.exports = {
           when: 'isNotTest',
           type: 'string',
           required: true,
-          message: 'APP中文名',
-          default: 'APP名字'
+          message: '中文名',
+          default: '中文名'
       },
       version: {
           when: 'isNotTest',
